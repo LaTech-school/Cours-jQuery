@@ -38,6 +38,7 @@ METTRE EN LIGNE - SUR GITHUB
     git commit -m "Initial commit"
     git push
 
-    git push origin master
+(Pour la premiere fois uniquement)
+    git push --set-upstream origin master
 
 
