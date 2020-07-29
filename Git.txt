@@ -1,0 +1,43 @@
+SUR GITHUB
+
+1. Aller sur www.GitHub.com
+2. Vous connecter a votre compte GitHub
+3. Aller sur Repositories (dépôts)
+4. Cliquer sur le btn "News"
+5. Creation du dépot
+    > Owner : Ne rien modifier
+    > Repository Name : Nom du Projet
+    > Description : Description du dépot
+    > Public
+    > NE PAS COCHER : Initialize this repository with a README
+    > NE RIEN FAIRE : Add .gitignore
+    > NE RIEN FAIRE : Add a license
+    > Cliquer "Create Repository"
+
+
+
+SUR VOTRE PROJET LOCAL SUR VOTRE PC
+
+1. Créer votre dossier de projet "Cours-jQuery"
+2. Ouvrir le terminal/cmder et pointer vers le dossier "Cours-jQuery"
+    cd /xampp/htdocs/bobby/jquery
+3. Initiliser git
+    git init
+4. Lier le dépot local au depot distant GitHub
+    git remote add origin https://github.com/votre-depot.git
+
+
+METTRE EN LIGNE - SUR GITHUB
+
+5. Configuration de GIT 
+    git config --global user.email "votre adresse email"
+    git config --global user.name "Prénom NOM"
+
+6. Pousser le code sur GitHub
+    git add *
+    git commit -m "Initial commit"
+    git push
+
+    git push origin master
+
+
