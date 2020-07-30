@@ -3,3 +3,4 @@
 2. Masquer en CSS les infos de chaque héro.
 
 3. Lorsque l'utilisateur clique sur le nom d'un Héro, il faut afficher les infos de ce hero et masquer les infos des autres Héros.
+
