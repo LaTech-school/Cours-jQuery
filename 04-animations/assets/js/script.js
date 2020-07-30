@@ -31,3 +31,9 @@ btnClose1.on('click', function(){
 btn2.on('click', function(){
     block2.toggle();
 });
+
+
+
+
+// Actions avec effets
+// --
