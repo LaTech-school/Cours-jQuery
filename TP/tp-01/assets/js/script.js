@@ -66,7 +66,10 @@ $(document).ready(function(){
         $div_name_id = "hero-"+ (index <= 9 ? "0"+index : index);
         
         // 2.C Ajout d'un classe et ID sur la <div>
-        $div_name.attr('id', $div_name_id);
+        $div_name
+            .addClass('hero_name')
+            .attr('id', $div_name_id)
+        ;
         
         // 2.D Injection du Nom du Hero dans la <div>
         $div_name.html(hero.nickname);
@@ -80,10 +83,65 @@ $(document).ready(function(){
         // 3. Création de la <div> contenant les infos du Hero
         // --
 
+        // 3.A Génération de la valeur de l'attribut ID
+        $div_info_id = "hero-"+ (index <= 9 ? "0"+index : index) +"-data";
+
+        // 3.B Création de la <div>
+        // 3.C Ajoute de l'ID sur la <div>
+        $div_info = $('<div>').attr('id', $div_info_id);
+
+        // 3.D Convertion de la liste des pouvoirs en chaine
+        $powers = hero.powers.join(", ");
+
+
+        // 3.E Injection des infos du héro
+
+        // 3.E Version 1 
+        // Nom réél
+        // $div_info.append(`Name : ${hero.firstname} ${hero.lastname}<br>`);
+        // // Pouvoirs
+        // $div_info.append(`Powers : ${$powers}<br>`);
+        // // Ville
+        // $div_info.append(`Location : ${hero.location}<br>`);
+
+        // 3.E Version 2
+        $div_info
+            .append(`Name : ${hero.firstname} ${hero.lastname}<br>`)
+            .append(`Powers : ${$powers}<br>`)
+            .append(`Location : ${hero.location}<br>`)
+        ;
+
+        // 3.E Version 3
+        // $info = `Name : ${hero.firstname} ${hero.lastname}<br>
+        //         Powers : ${$powers}<br>
+        //         Location : ${hero.location}<br>`;
+        // $div_info.append($info);
+
+        // 3.F Injection de la <div> dans la balise <li>
+        $li.append($div_info);
+
+
 
         // 4. Injection de la balise <li> dans la balise <ul id="heros"">
         $ul.append($li);
 
+    });
+
+    $('.hero_name').on('click', function(){
+        
+        // 1. Récupération de l'id du héro cliqué
+        $hero_name_id = $(this).attr('id');
+
+        // 2. Génération de l'id de l'element contenant les infos du hero
+        $hero_info_id = $hero_name_id+"-data";
+
+        // 3. Ciblage de tous les elements contenant les infos des héros + fermeture des elements
+        // tous les derniers element <div> des elements <li> trouvés dans <ul id="heros">
+        $ul.find('li').find('div:last-child').stop().slideUp();
+
+        // 4. Affichage des infos du Hero cliqué
+        $('#'+$hero_info_id).slideDown();
+        
     });
 
 });
