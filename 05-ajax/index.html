@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    
+    <nav>
+        <a href="a.html">Page A</a>
+        <a href="b.html">Page B</a>
+        <a href="c.html">Page C</a>
+        <a href="d.html">Page D</a>
+    </nav>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6uYRN6b5EMU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div id="content">
+        Contenu de ma page
+    </div>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        
+        $link = $('a');
+
+        $link.on('click', function(){
+
+            $url = $(this).attr('href');
+
+            $.ajax($url).done(function(response){
+
+                $('#content').html(response);
+
+            });
+
+            return false;
+        });
+
+    });
+    </script>
+</body>
+</html>
